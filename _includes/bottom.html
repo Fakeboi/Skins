@@ -1,0 +1,106 @@
+            <br/>{% if page.sel != 'skins' %}<hr/><br/>{% endif %}
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Bonk (Money Grab) Leagues -->
+                <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-8362785424135480"
+                data-ad-slot="5034197850"
+                data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <div id="adbnote">It looks like you have an ad-blocker on.<br/><br/><b>To help support the development of Bonk Leagues and the Skin Manager, we'd like it if you would disable it &lt;3.</b></div>
+            <br/><br/>
+
+            <footer>
+                <img src="/static/img/editor-logo.png" width="32"><br/>
+                <span style="font-size:10px;">
+                    Bonk Leagues is in no way affiliated with bonk.io, multiplayer.gg or Chaz, but is simply a fan-made tool website.<br/>
+                    Our website uses cookies to enhance user experience and are required for most of the website to function. By using Bonk Leagues, you agree to the use of cookies.<br/>
+                    <a href="https://bonk.io">Play bonk.io</a> &bull; <a href="/static/data/privacy_policy.html" target="_blank">Privacy &amp; Cookie Policy</a>
+                </span>
+            </footer>
+
+            <div class="remodal remodaldiscord" data-remodal-id="remodaldiscord">
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <h1 class="parthead">Join our Discord server!</h1>
+                <p>We have now opened our official Bonk Leagues Discord server!</p>
+                <p>Join for Bonk Leagues support, chat, suggestions and everything Bonk.</p>
+                <br/>
+                <button data-remodal-action="confirm" onclick="window.open('https://discord.gg/RadQ7xx', '_blank');" class="remodal-confirm button">Join!</button>
+                <button data-remodal-action="close" class="remodal-cancel button">No thanks</button>
+                <br/><br/>
+                <a style="text-decoration:underline;cursor:pointer;" data-remodal-action="cancel" id="cusa">Don't show me this again</a>
+            </div>
+
+            <div class="remodal remodalupdate" style="padding:0" data-remodal-id="remodalupdate">
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <img src="/static/img/30-03-2018_changelog.jpg" style="max-width:700px">
+            </div>
+
+            <span style="position:fixed;bottom:15px;right:15px;font-size:16px;z-index:998;">website by Finbae<span style="font-size:11px;color:#666;">#1155</span></span>   
+        </section>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bab.js"></script>
+        <script src="/static/js/blockdetect.js"></script>
+        {% if page.sel == 'skins' %}
+        <script src="/static/js/jquery-ui.min.js#1"></script>
+        <script src="/static/js/md5.js"></script>
+        <script src="/static/js/jscolor.min.js"></script>
+        <script src="/static/js/tag-it.min.js"></script>
+        <script src="/static/js/skineditor.js#20"></script>
+        {% endif %}
+        <script src="/static/js/{{ page.scriptToUse }}.js#39"></script>
+        <script src="/static/js/remodal.js"></script>
+        <script>
+            setTimeout(function(){
+                if(!getCookie('mdis')){
+                    var inst = $('[data-remodal-id=remodaldiscord]').remodal({hashTracking:false});
+                    inst.open();
+                } else if(!getCookie('mdisupdate1')) {
+                    if ($(window).width() > 600) {
+                        var inst = $('[data-remodal-id=remodalupdate]').remodal({hashTracking:false});
+                        inst.open();
+                    }
+                }
+            },6500);
+
+            $(document).on('confirmation', '.remodaldiscord', function () {
+                setCookie('mdisupdate1', 'true', 365);
+                setCookie('mdis', 'true', 365);
+            });
+            $(document).on('cancellation', '.remodaldiscord', function () {
+                setCookie('mdisupdate1', 'true', 365);
+                setCookie('mdis', 'true', 365);
+            });
+
+            $(document).on('closing', '.remodalupdate', function () {
+                setCookie('mdisupdate1', 'true', 365);
+            });
+
+            function setCookie(name,value,days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days*24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+            }
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                }
+                return null;
+            }
+            function eraseCookie(name) {   
+                document.cookie = name+'=; Max-Age=-99999999;';  
+            }
+        </script>
+    </body>
+</html>
