@@ -5,7 +5,7 @@ defaults:
       shorttitle: 'Bonk Leagues'
       layout: 'default'
       desc: 'Bonk Leagues - the best tools for bonk.io, featuring a skin manager, XP checker and more for http://bonk.io/'
-      canonical: 'https://bonkleagues.github.io/'
+      canonical: 'https://fakeboi.github.io/'
       sel: 'home'
       scriptToUse: 'script'
       styleToUse: 'style'
